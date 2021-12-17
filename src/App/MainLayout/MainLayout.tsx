@@ -18,7 +18,7 @@ const useTabStyles = makeStyles(() => ({
 
 const TabItem: React.FC<{
   routerPath: { iconPath: string; name: string };
-}> = ({ routerPath }) => {
+}> = ({ routerPath, ...restProps }) => {
   const classes = useTabStyles();
   const theme = useTheme();
   const isXs = useMediaQuery(theme.breakpoints.only("xs"));
@@ -27,6 +27,7 @@ const TabItem: React.FC<{
     <Tab
       label={isXs ? "" : routerPath.name}
       icon={<img src={routerPath.iconPath} className={classes.tabImg} />}
+      {...restProps}
     />
   );
 };
@@ -50,9 +51,12 @@ export const MainLayout: React.FC = ({ children }) => {
 
   const handleChange = (
     event: React.ChangeEvent<Record<string, unknown>>,
-    newValue: string
+    newValue: number
   ) => {
-    history.push(newValue);
+    history.push(
+      Object.values(routerPaths).find(({ index }) => index === newValue)
+        ?.path || "/"
+    );
     setValue(Number(newValue));
   };
 
@@ -66,14 +70,11 @@ export const MainLayout: React.FC = ({ children }) => {
         onChange={handleChange}
         value={value}
       >
-        <TabItem routerPath={routerPaths.intermittentFasting} />
-        <TabItem routerPath={routerPaths.ketogenicDiet} />
-        <TabItem routerPath={routerPaths.breadIsPoison} />
-        <TabItem routerPath={routerPaths.sugarIsPoison} />
-        <TabItem routerPath={routerPaths.oilsThatArePoison} />
-        <TabItem routerPath={routerPaths.acne} />
-        <TabItem routerPath={routerPaths.goodYoutubeChannels} />
-        <TabItem routerPath={routerPaths.guruPeople} />
+        {Object.values(routerPaths)
+          .sort((routeA, routeB) => routeA.index - routeB.index)
+          .map((routePath) => (
+            <TabItem key={routePath.path} routerPath={routePath} />
+          ))}
       </Tabs>
 
       {children}
