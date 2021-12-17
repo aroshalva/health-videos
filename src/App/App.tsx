@@ -8,6 +8,7 @@ import {
 } from "@material-ui/core";
 import { MainLayout } from "./MainLayout/MainLayout";
 import { routerPaths } from "./MainLayout/routerPaths";
+import { YoutubeVideoList } from "./YoutubeVideoList/YoutubeVideoList";
 
 const muiTheme = responsiveFontSizes(createTheme({}), {
   factor: 5,
@@ -23,10 +24,16 @@ export const App: React.FC = () => {
           <BrowserRouter>
             <MainLayout>
               <Switch>
-                <Route path="/" exact render={() => <Redirect to="/" />} />
+                <Route
+                  path="/"
+                  exact
+                  render={() => (
+                    <Redirect to={routerPaths.intermittentFasting.path} />
+                  )}
+                />
 
                 <Route path={routerPaths.intermittentFasting.path}>
-                  {routerPaths.intermittentFasting.path}
+                  <YoutubeVideoList />
                 </Route>
 
                 <Route path={routerPaths.ketogenicDiet.path}>
