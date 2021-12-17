@@ -52,6 +52,10 @@ export const App: React.FC = () => {
                   {routerPaths.oilsThatArePoison.path}
                 </Route>
 
+                <Route path={routerPaths.acne.path}>
+                  {routerPaths.acne.path}
+                </Route>
+
                 <Route path={routerPaths.goodYoutubeChannels.path}>
                   {routerPaths.goodYoutubeChannels.path}
                 </Route>
