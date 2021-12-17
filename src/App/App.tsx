@@ -1,7 +1,13 @@
 import "./App.scss";
 import { Switch, Route, Redirect, BrowserRouter } from "react-router-dom";
 import { ThemeProvider, StylesProvider } from "@material-ui/core/styles";
-import { createTheme, responsiveFontSizes } from "@material-ui/core";
+import {
+  createTheme,
+  CssBaseline,
+  responsiveFontSizes,
+} from "@material-ui/core";
+import { MainLayout } from "./MainLayout/MainLayout";
+import { routerPaths } from "./MainLayout/routerPaths";
 
 const muiTheme = responsiveFontSizes(createTheme({}), {
   factor: 5,
@@ -12,16 +18,46 @@ export const App: React.FC = () => {
     <div className="App">
       <StylesProvider injectFirst>
         <ThemeProvider theme={muiTheme}>
+          <CssBaseline />
+
           <BrowserRouter>
-            <Switch>
-              <Route path="/" exact>
-                Main
-              </Route>
+            <MainLayout>
+              <Switch>
+                <Route path="/" exact render={() => <Redirect to="/" />} />
 
-              <Route path="/admin-control-panel">admin control panel</Route>
+                <Route path={routerPaths.intermittentFasting.path}>
+                  {routerPaths.intermittentFasting.path}
+                </Route>
 
-              <Route render={() => <Redirect to="/" />} />
-            </Switch>
+                <Route path={routerPaths.ketogenicDiet.path}>
+                  {routerPaths.ketogenicDiet.path}
+                </Route>
+
+                <Route path={routerPaths.breadIsPoison.path}>
+                  {routerPaths.breadIsPoison.path}
+                </Route>
+
+                <Route path={routerPaths.sugarIsPoison.path}>
+                  {routerPaths.sugarIsPoison.path}
+                </Route>
+
+                <Route path={routerPaths.oilsThatArePoison.path}>
+                  {routerPaths.oilsThatArePoison.path}
+                </Route>
+
+                <Route path={routerPaths.goodYoutubeChannels.path}>
+                  {routerPaths.goodYoutubeChannels.path}
+                </Route>
+
+                <Route path={routerPaths.guruPeople.path}>
+                  {routerPaths.guruPeople.path}
+                </Route>
+
+                <Route path="/admin-control-panel">admin control panel</Route>
+
+                <Route render={() => <Redirect to="/" />} />
+              </Switch>
+            </MainLayout>
           </BrowserRouter>
         </ThemeProvider>
       </StylesProvider>

@@ -2,4 +2,7 @@
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
   },
+  "search.exclude": {
+    "**/package-lock.json": true,
+  }
 }

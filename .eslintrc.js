@@ -29,7 +29,10 @@ module.exports = {
     "no-unused-vars": 0,
     "@typescript-eslint/camelcase": "off",
     "react/prop-types": "off",
-    "@typescript-eslint/no-unused-vars": ["error", { ignoreRestSiblings: true }],
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      { ignoreRestSiblings: true },
+    ],
     "@typescript-eslint/explicit-module-boundary-types": "off",
     "eslint@typescript-eslint/no-explicit-any": "off",
     "@typescript-eslint/ban-ts-comment": "off",
@@ -45,7 +48,12 @@ module.exports = {
       },
     ],
   },
-  plugins: ["@typescript-eslint", "custom-rules", "mui-unused-classes", "eslint-plugin-no-inline-styles"],
+  plugins: [
+    "@typescript-eslint",
+    "custom-rules",
+    "mui-unused-classes",
+    "eslint-plugin-no-inline-styles",
+  ],
   globals: {
     React: true,
     JSX: true,
