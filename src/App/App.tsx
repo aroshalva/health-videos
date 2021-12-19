@@ -11,7 +11,7 @@ import { routerPaths } from "./MainLayout/routerPaths";
 import { YoutubeVideoList } from "./YoutubeVideoList/YoutubeVideoList";
 
 const muiTheme = responsiveFontSizes(createTheme({}), {
-  factor: 5,
+  factor: 1.5,
 });
 
 export const App: React.FC = () => {
@@ -33,7 +33,15 @@ export const App: React.FC = () => {
                 />
 
                 <Route path={routerPaths.intermittentFasting.path}>
-                  <YoutubeVideoList />
+                  <div
+                    style={{
+                      width: "100%",
+                      display: "flex",
+                      justifyContent: "center",
+                    }}
+                  >
+                    <YoutubeVideoList />
+                  </div>
                 </Route>
 
                 <Route path={routerPaths.ketogenicDiet.path}>

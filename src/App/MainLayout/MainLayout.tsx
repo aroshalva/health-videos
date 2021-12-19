@@ -11,7 +11,11 @@ import React, { useState } from "react";
 import { routerPaths } from "./routerPaths";
 import { useHistory } from "react-router-dom";
 
-const useTabStyles = makeStyles((theme: Theme) => ({
+const useTabStyles = makeStyles<Theme, { isSelected: boolean }>((theme) => ({
+  tab: ({ isSelected }) => ({
+    background: isSelected ? "#9ee9d869" : "initial",
+    fontWeight: isSelected ? "bold" : "initial",
+  }),
   tabImg: {
     width: "45px",
     [theme.breakpoints.only("xs")]: {
@@ -21,14 +25,18 @@ const useTabStyles = makeStyles((theme: Theme) => ({
 }));
 
 const TabItem: React.FC<{
-  routerPath: { iconPath: string; name: string };
+  routerPath: { path: string; iconPath: string; name: string };
 }> = ({ routerPath, ...restProps }) => {
-  const classes = useTabStyles();
+  const history = useHistory();
+  const classes = useTabStyles({
+    isSelected: routerPath.path === history.location.pathname,
+  });
   const theme = useTheme();
   const isXs = useMediaQuery(theme.breakpoints.only("xs"));
 
   return (
     <Tab
+      className={classes.tab}
       style={{ minWidth: "unset" }}
       label={isXs ? "" : routerPath.name}
       icon={<img src={routerPath.iconPath} className={classes.tabImg} />}
@@ -37,15 +45,16 @@ const TabItem: React.FC<{
   );
 };
 
-const useStyles = makeStyles((theme: Theme) => ({
+const useStyles = makeStyles(() => ({
   root: {
+    backgroundColor: "oldlace",
     flexGrow: 1,
-    backgroundColor: theme.palette.background.paper,
     display: "flex",
     height: "100%",
   },
   tabs: {
-    borderRight: `1px solid ${theme.palette.divider}`,
+    backgroundColor: "#ffebc8",
+    borderRight: `1px solid #00000040`,
     minWidth: "50px",
   },
 }));
