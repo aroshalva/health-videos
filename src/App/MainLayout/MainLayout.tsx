@@ -8,7 +8,7 @@ import {
   useTheme,
 } from "@material-ui/core";
 import React, { useState } from "react";
-import { routerPaths } from "./routerPaths";
+import { allData } from "../../allData";
 import { useHistory } from "react-router-dom";
 
 const useTabStyles = makeStyles<Theme, { isSelected: boolean }>((theme) => ({
@@ -63,7 +63,7 @@ export const MainLayout: React.FC = ({ children }) => {
   const classes = useStyles();
   const history = useHistory();
   const [value, setValue] = useState(
-    Object.values(routerPaths).find(
+    Object.values(allData).find(
       ({ path }) => path === history.location.pathname
     )?.index || 0
   );
@@ -73,8 +73,8 @@ export const MainLayout: React.FC = ({ children }) => {
     newValue: number
   ) => {
     history.push(
-      Object.values(routerPaths).find(({ index }) => index === newValue)
-        ?.path || "/"
+      Object.values(allData).find(({ index }) => index === newValue)?.path ||
+        "/"
     );
     setValue(Number(newValue));
   };
@@ -89,7 +89,7 @@ export const MainLayout: React.FC = ({ children }) => {
         onChange={handleChange}
         value={value}
       >
-        {Object.values(routerPaths)
+        {Object.values(allData)
           .sort((routeA, routeB) => routeA.index - routeB.index)
           .map((routePath) => (
             <TabItem key={routePath.path} routerPath={routePath} />

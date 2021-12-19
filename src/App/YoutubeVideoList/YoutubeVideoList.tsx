@@ -1,23 +1,6 @@
 import { makeStyles, Theme, Typography } from "@material-ui/core";
 import { YoutubePlayer } from "./YoutubePlayer/YoutubePlayer";
 
-const videoIdList = [
-  "dW_99QcCTzE",
-  "VIhhrYjVhOk",
-  "DnRQJzK6yvI",
-  "DnRQJzK6yvI",
-  // "DnRQJzK6yvI",
-  // "DnRQJzK6yvI",
-  // "DnRQJzK6yvI",
-  // "DnRQJzK6yvI",
-  // "DnRQJzK6yvI",
-  // "DnRQJzK6yvI",
-  // "DnRQJzK6yvI",
-  // "DnRQJzK6yvI",
-  // "DnRQJzK6yvI",
-  // "DnRQJzK6yvI",
-];
-
 const useStyles = makeStyles((theme: Theme) => ({
   root: {
     width: "100%",
@@ -28,9 +11,10 @@ const useStyles = makeStyles((theme: Theme) => ({
   section: {
     display: "flex",
     flexWrap: "wrap",
-    justifyContent: "center",
+    justifyContent: "start",
     marginBottom: "50px",
     [theme.breakpoints.only("xs")]: {
+      marginBottom: "20px",
       flexDirection: "column",
     },
   },
@@ -44,21 +28,43 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
 }));
 
-export const YoutubeVideoList: React.FC = () => {
+export const YoutubeVideoList: React.FC<{
+  videos: {
+    quick: string[];
+    long: string[];
+  };
+}> = ({ videos }) => {
   const classes = useStyles();
 
   return (
     <div className={classes.root}>
-      <div className={classes.sectionTitle}>
-        <Typography variant="h4">Quick Videos</Typography>
-        {/* <Typography variant="h4">Long Videos</Typography> */}
-      </div>
+      {!!videos.quick.length && (
+        <>
+          <div className={classes.sectionTitle}>
+            <Typography variant="h4">Quick Videos</Typography>
+          </div>
 
-      <div className={classes.section}>
-        {videoIdList.map((videoId, index) => (
-          <YoutubePlayer key={index} videoId={videoId} />
-        ))}
-      </div>
+          <div className={classes.section}>
+            {videos.quick.map((videoId, index) => (
+              <YoutubePlayer key={index} videoId={videoId} />
+            ))}
+          </div>
+        </>
+      )}
+
+      {!!videos.long.length && (
+        <>
+          <div className={classes.sectionTitle}>
+            <Typography variant="h4">Long Videos</Typography>
+          </div>
+
+          <div className={classes.section}>
+            {videos.long.map((videoId, index) => (
+              <YoutubePlayer key={index} videoId={videoId} />
+            ))}
+          </div>
+        </>
+      )}
     </div>
   );
 };

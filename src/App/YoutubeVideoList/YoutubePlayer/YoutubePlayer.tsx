@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     [theme.breakpoints.only("xs")]: {
       display: "flex",
       flexDirection: "column",
-      alignItems: "center",
+      alignItems: "start",
       width: "100%",
     },
   },
@@ -26,9 +26,9 @@ const useStyles = makeStyles((theme: Theme) => ({
     width: "fit-content",
   },
   video: {
-    width: "300px",
-    maxWidth: "300px",
-    height: "150px",
+    width: "400px",
+    maxWidth: "400px",
+    height: "225px",
     display: "flex",
     borderRadius: "7px",
     [theme.breakpoints.only("xs")]: {
@@ -82,7 +82,11 @@ export const YoutubePlayer: React.FC<{ videoId: string }> = ({ videoId }) => {
 
   useEffect(() => {
     const innerFn = async () => {
-      setVideoInfo(await fetchYoutubeVideoOEmbed({ videoId }));
+      const videoInfo = await fetchYoutubeVideoOEmbed({ videoId });
+
+      setVideoInfo(videoInfo);
+
+      // console.log("videoInfo", videoInfo);
     };
 
     innerFn();
@@ -93,8 +97,6 @@ export const YoutubePlayer: React.FC<{ videoId: string }> = ({ videoId }) => {
       setDuration(secondsToTimer(player.getDuration()));
     }
   }, [player]);
-
-  console.log(111, videoInfo);
 
   return (
     <div className={classes.root}>
@@ -115,17 +117,17 @@ export const YoutubePlayer: React.FC<{ videoId: string }> = ({ videoId }) => {
             </Typography>
           </>
         )}
-        <Typography
+        <div
           style={{ display: "flex", alignItems: "center", marginTop: "9px" }}
         >
           <Typography className={classes.duration}>{duration}</Typography>
 
           {videoInfo && (
             <Link color="inherit" href={videoInfo.author_url} target="_blank">
-              {videoInfo.author_name}
+              <Typography>{videoInfo.author_name}</Typography>
             </Link>
           )}
-        </Typography>
+        </div>
       </div>
     </div>
   );

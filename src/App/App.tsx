@@ -7,8 +7,15 @@ import {
   responsiveFontSizes,
 } from "@material-ui/core";
 import { MainLayout } from "./MainLayout/MainLayout";
-import { routerPaths } from "./MainLayout/routerPaths";
-import { YoutubeVideoList } from "./YoutubeVideoList/YoutubeVideoList";
+import { allData } from "../allData";
+import { IntermittentFasting } from "./routes/IntermittentFasting/IntermittentFasting";
+import { KetogenicDiet } from "./routes/KetogenicDiet/KetogenicDiet";
+import { BreadIsPoison } from "./routes/BreadIsPoison/BreadIsPoison";
+import { SugarIsPoison } from "./routes/SugarIsPoison/SugarIsPoison";
+import { OilsThatArePoison } from "./routes/OilsThatArePoison/OilsThatArePoison";
+import { Acne } from "./routes/Acne/Acne";
+import { GoodYoutubeChannels } from "./routes/GoodYoutubeChannels/GoodYoutubeChannels";
+import { GuruPeople } from "./routes/GuruPeople/GuruPeople";
 
 const muiTheme = responsiveFontSizes(createTheme({}), {
   factor: 1.5,
@@ -28,48 +35,40 @@ export const App: React.FC = () => {
                   path="/"
                   exact
                   render={() => (
-                    <Redirect to={routerPaths.intermittentFasting.path} />
+                    <Redirect to={allData.intermittentFasting.path} />
                   )}
                 />
 
-                <Route path={routerPaths.intermittentFasting.path}>
-                  <div
-                    style={{
-                      width: "100%",
-                      display: "flex",
-                      justifyContent: "center",
-                    }}
-                  >
-                    <YoutubeVideoList />
-                  </div>
+                <Route path={allData.intermittentFasting.path}>
+                  <IntermittentFasting />
                 </Route>
 
-                <Route path={routerPaths.ketogenicDiet.path}>
-                  {routerPaths.ketogenicDiet.path}
+                <Route path={allData.ketogenicDiet.path}>
+                  <KetogenicDiet />
                 </Route>
 
-                <Route path={routerPaths.breadIsPoison.path}>
-                  {routerPaths.breadIsPoison.path}
+                <Route path={allData.breadIsPoison.path}>
+                  <BreadIsPoison />
                 </Route>
 
-                <Route path={routerPaths.sugarIsPoison.path}>
-                  {routerPaths.sugarIsPoison.path}
+                <Route path={allData.sugarIsPoison.path}>
+                  <SugarIsPoison />
                 </Route>
 
-                <Route path={routerPaths.oilsThatArePoison.path}>
-                  {routerPaths.oilsThatArePoison.path}
+                <Route path={allData.oilsThatArePoison.path}>
+                  <OilsThatArePoison />
                 </Route>
 
-                <Route path={routerPaths.acne.path}>
-                  {routerPaths.acne.path}
+                <Route path={allData.acne.path}>
+                  <Acne />
                 </Route>
 
-                <Route path={routerPaths.goodYoutubeChannels.path}>
-                  {routerPaths.goodYoutubeChannels.path}
+                <Route path={allData.goodYoutubeChannels.path}>
+                  <GoodYoutubeChannels />
                 </Route>
 
-                <Route path={routerPaths.guruPeople.path}>
-                  {routerPaths.guruPeople.path}
+                <Route path={allData.guruPeople.path}>
+                  <GuruPeople />
                 </Route>
 
                 <Route path="/admin-control-panel">admin control panel</Route>
