@@ -3,6 +3,8 @@ import { apiUrls } from "../apiUrls";
 
 export type YoutubeVideoOEmbed = {
   title: string;
+  author_name: string;
+  author_url: string;
 };
 
 export const fetchYoutubeVideoOEmbed = ({

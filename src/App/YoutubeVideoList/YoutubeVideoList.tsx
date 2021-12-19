@@ -1,4 +1,4 @@
-import { makeStyles, Typography } from "@material-ui/core";
+import { makeStyles, Theme, Typography } from "@material-ui/core";
 import { YoutubePlayer } from "./YoutubePlayer/YoutubePlayer";
 
 const videoIdList = [
@@ -18,13 +18,21 @@ const videoIdList = [
   // "DnRQJzK6yvI",
 ];
 
-const useStyles = makeStyles(() => ({
-  root: { width: "100%" },
+const useStyles = makeStyles((theme: Theme) => ({
+  root: {
+    width: "100%",
+    [theme.breakpoints.only("xs")]: {
+      maxWidth: "500px",
+    },
+  },
   section: {
     display: "flex",
     flexWrap: "wrap",
     justifyContent: "center",
     marginBottom: "50px",
+    [theme.breakpoints.only("xs")]: {
+      flexDirection: "column",
+    },
   },
   sectionTitle: {
     color: "#428d7c",
