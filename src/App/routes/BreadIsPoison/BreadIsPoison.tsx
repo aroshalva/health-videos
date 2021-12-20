@@ -1,6 +1,6 @@
 import { makeStyles } from "@material-ui/core";
 import { allData } from "allData";
-import { YoutubeVideoList } from "App/YoutubeVideoList/YoutubeVideoList";
+import { YoutubeVideoList } from "App/components/YoutubeVideoList/YoutubeVideoList";
 
 const useStyles = makeStyles(() => ({
   root: {},
@@ -11,7 +11,7 @@ export const BreadIsPoison: React.FC = () => {
 
   return (
     <div className={classes.root}>
-      <YoutubeVideoList videos={allData.acne.videos} />
+      <YoutubeVideoList videos={allData.breadIsPoison.videos} />
     </div>
   );
 };

@@ -4,5 +4,8 @@
   },
   "search.exclude": {
     "**/package-lock.json": true,
-  }
+  },
+  "cSpell.words": [
+    "Influencers"
+  ]
 }

@@ -25,8 +25,8 @@ export const allData = {
     path: "/ketogenic-diet",
     iconPath: `${iconPathBase}/ketogenic-diet.png`,
     videos: {
-      quick: [],
-      long: [],
+      quick: ["xwKmVjSXTDk"],
+      long: ["yhulQ0XuAPM"],
     },
   },
   breadIsPoison: {
@@ -74,11 +74,74 @@ export const allData = {
     name: "Good Youtube Channels",
     path: "/good-youtube-channels",
     iconPath: `${iconPathBase}/good-youtube-channels.png`,
+    sectionsOfInfluencers: [
+      {
+        name: "Ketogenic Diet",
+        list: [
+          {
+            name: "Dr. Eric Berg DC",
+            url: "https://www.youtube.com/channel/UC3w193M5tYPJqF0Hi-7U-2g",
+            imageUrl:
+              "https://yt3.ggpht.com/ytc/AKedOLTPNKQaNreGaliJXlCYYkJVcnCZHsymUl2HUALo5A=s176-c-k-c0x00ffffff-no-rj",
+            description: "Doctor, ketogenic diet proponent.",
+          },
+          {
+            name: "KenDBerryMD",
+            url: "https://www.youtube.com/c/KenDBerryMD",
+            imageUrl:
+              "https://yt3.ggpht.com/ytc/AKedOLS9DlOP6Mbe_YfUWbvrqvfddFJPllH9rodDv6jNiA=s176-c-k-c0x00ffffff-no-rj",
+            description: "",
+          },
+          {
+            name: "Jason Fung",
+            url: "https://www.youtube.com/user/drjasonfung",
+            imageUrl:
+              "https://yt3.ggpht.com/ytc/AKedOLTAUWkQNpgplYGZogFR56ec1YG18PIWHLCAJxIMaw=s176-c-k-c0x00ffffff-no-rj",
+            description: "",
+          },
+          {
+            name: "Thomas DeLauer",
+            url: "https://www.youtube.com/user/TheTdelauer",
+            imageUrl:
+              "https://yt3.ggpht.com/ytc/AKedOLRrBGmwMzSTTNN3bE9c12EU736glRETD7A5Ygwt=s176-c-k-c0x00ffffff-no-rj",
+            description: "",
+          },
+          {
+            name: "Keto Kamp",
+            url: "https://www.youtube.com/c/KetoKamp",
+            imageUrl:
+              "https://yt3.ggpht.com/ytc/AKedOLQ76dg2kyEGvMI_9iI53k5BJzZSj455UTkTz1yfmw=s176-c-k-c0x00ffffff-no-rj",
+            description: "",
+          },
+        ],
+      },
+      {
+        name: "Miscellaneous",
+        list: [
+          {
+            name: "Dr. Rhonda Patrick",
+            url: "https://www.youtube.com/c/FoundMyFitness/videos",
+            imageUrl:
+              "https://i.ytimg.com/vi/Ys86ZgjQQYg/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLByEUunPX_JFGJcKrWx4zFL32ldvQ",
+            description: "",
+          },
+        ],
+      },
+    ],
   },
   guruPeople: {
     index: 7,
     name: "Guru People",
     path: "/guru-people",
     iconPath: `${iconPathBase}/guru-people.png`,
+    sectionsOfInfluencers: [],
   },
 };
+
+export type VideosType = typeof allData.intermittentFasting.videos;
+
+export type SectionsOfInfluencers =
+  typeof allData.goodYoutubeChannels.sectionsOfInfluencers;
+
+export type InfluencersType =
+  typeof allData.goodYoutubeChannels.sectionsOfInfluencers[0]["list"];

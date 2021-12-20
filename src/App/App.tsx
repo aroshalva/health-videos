@@ -64,7 +64,11 @@ export const App: React.FC = () => {
                 </Route>
 
                 <Route path={allData.goodYoutubeChannels.path}>
-                  <GoodYoutubeChannels />
+                  <GoodYoutubeChannels
+                    sectionsOfInfluencers={
+                      allData.goodYoutubeChannels.sectionsOfInfluencers
+                    }
+                  />
                 </Route>
 
                 <Route path={allData.guruPeople.path}>
