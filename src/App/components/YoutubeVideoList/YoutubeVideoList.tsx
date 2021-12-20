@@ -1,4 +1,5 @@
-import { makeStyles, Theme, Typography } from "@material-ui/core";
+import { makeStyles, Theme } from "@material-ui/core";
+import { SectionTitle } from "../SectionTitle/SectionTitle";
 import { YoutubePlayer } from "./YoutubePlayer/YoutubePlayer";
 
 const useStyles = makeStyles((theme: Theme) => ({
@@ -18,14 +19,6 @@ const useStyles = makeStyles((theme: Theme) => ({
       flexDirection: "column",
     },
   },
-  sectionTitle: {
-    color: "#428d7c",
-    background: "#ffebc8",
-    fontSize: "2rem",
-    padding: "5px 15px",
-    marginBottom: "15px",
-    width: "100%",
-  },
 }));
 
 export const YoutubeVideoList: React.FC<{
@@ -40,9 +33,7 @@ export const YoutubeVideoList: React.FC<{
     <div className={classes.root}>
       {!!videos.quick.length && (
         <>
-          <div className={classes.sectionTitle}>
-            <Typography variant="h4">Quick Videos</Typography>
-          </div>
+          <SectionTitle>Quick Videos</SectionTitle>
 
           <div className={classes.section}>
             {videos.quick.map((videoId, index) => (
@@ -54,9 +45,7 @@ export const YoutubeVideoList: React.FC<{
 
       {!!videos.long.length && (
         <>
-          <div className={classes.sectionTitle}>
-            <Typography variant="h4">Long Videos</Typography>
-          </div>
+          <SectionTitle>Long Videos</SectionTitle>
 
           <div className={classes.section}>
             {videos.long.map((videoId, index) => (

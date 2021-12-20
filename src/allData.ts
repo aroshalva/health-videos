@@ -116,7 +116,7 @@ export const allData = {
         ],
       },
       {
-        name: "Miscellaneous",
+        name: "Various",
         list: [
           {
             name: "Dr. Rhonda Patrick",
