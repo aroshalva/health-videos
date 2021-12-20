@@ -48,7 +48,9 @@ export const YoutubeVideoList: React.FC<{
 
       {!!videos.long.length && (
         <>
-          <SectionTitle>Deep Dive</SectionTitle>
+          <SectionTitle {...(!videos.quick.length && { contentTitle: name })}>
+            Deep Dive
+          </SectionTitle>
 
           <div className={classes.section}>
             {videos.long.map((videoId, index) => (

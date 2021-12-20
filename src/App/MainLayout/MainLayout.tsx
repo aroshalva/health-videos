@@ -45,7 +45,7 @@ const TabItem: React.FC<{
   );
 };
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
   root: {
     backgroundColor: "oldlace",
     flexGrow: 1,
@@ -56,6 +56,12 @@ const useStyles = makeStyles(() => ({
     backgroundColor: "#ffebc8",
     borderRight: `1px solid #00000040`,
     minWidth: "50px",
+  },
+  children: {
+    padding: "16px",
+    [theme.breakpoints.only("xs")]: {
+      padding: "16px 5px",
+    },
   },
 }));
 
@@ -96,7 +102,10 @@ export const MainLayout: React.FC = ({ children }) => {
           ))}
       </Tabs>
 
-      <Box p={2} style={{ width: "100%", overflow: "auto" }}>
+      <Box
+        className={classes.children}
+        style={{ width: "100%", overflow: "auto" }}
+      >
         {children}
       </Box>
     </div>

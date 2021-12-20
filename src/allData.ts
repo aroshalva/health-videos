@@ -57,8 +57,18 @@ export const allData = {
     path: "/acne",
     iconPath: `${iconPathBase}/acne.png`,
     videos: {
-      quick: [],
-      long: [],
+      quick: ["xt0ukji3cXc"],
+      long: [
+        "TIPXGsDnrLE",
+        "TUT2tP6QWvs",
+        "GRN_W9d6y84",
+        "qoz0BN7r5nY",
+        "b4Nqd8QSPDg",
+        "6nzSUEaZhVA",
+        "JE3PeG4hi4w",
+        "XunFYHheVO8",
+        "CBgOhMdmCSE",
+      ],
     },
   },
   guruPeople: {
@@ -129,6 +139,13 @@ export const allData = {
             url: "https://www.youtube.com/user/wimhof1",
             imageUrl:
               "https://yt3.ggpht.com/ytc/AKedOLQnPvw7wAI1f_RFYH9d1AUw0e60mmhGPrrAIHD_=s176-c-k-c0x00ffffff-no-rj",
+            description: "",
+          },
+          {
+            name: "Jordan Peterson",
+            url: "https://www.youtube.com/c/JordanPetersonVideos",
+            imageUrl:
+              "https://i.guim.co.uk/img/media/2cbb7b18e8238dd463907a82cc7be7160360a1c9/1066_55_3689_2214/master/3689.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=142a0209a663880757df8b428e76680e",
             description: "",
           },
           {

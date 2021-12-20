@@ -33,6 +33,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     borderRadius: "7px",
     [theme.breakpoints.only("xs")]: {
       width: "100%",
+      height: "180px",
     },
   },
   duration: {
