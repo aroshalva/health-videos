@@ -11,7 +11,7 @@ export const KetogenicDiet: React.FC = () => {
 
   return (
     <div className={classes.root}>
-      <YoutubeVideoList videos={allData.ketogenicDiet.videos} />
+      <YoutubeVideoList dataItem={allData.ketogenicDiet} />
     </div>
   );
 };

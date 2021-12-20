@@ -7,16 +7,8 @@ export const allData = {
     path: "/intermittent-fasting",
     iconPath: `${iconPathBase}/intermittent-fasting.png`,
     videos: {
-      quick: ["dW_99QcCTzE", "VIhhrYjVhOk", "DnRQJzK6yvI"],
-      long: [
-        "DnRQJzK6yvI",
-        "DnRQJzK6yvI",
-        "DnRQJzK6yvI",
-        "DnRQJzK6yvI",
-        "DnRQJzK6yvI",
-        "DnRQJzK6yvI",
-        "DnRQJzK6yvI",
-      ],
+      quick: ["VIhhrYjVhOk", "dW_99QcCTzE", "xrZMYVDcjZI"],
+      long: ["m09B2hDx-Sg", "LLVf3d0rqqY", "DnRQJzK6yvI", "cUwd-D94pzE"],
     },
   },
   ketogenicDiet: {
@@ -25,8 +17,8 @@ export const allData = {
     path: "/ketogenic-diet",
     iconPath: `${iconPathBase}/ketogenic-diet.png`,
     videos: {
-      quick: ["xwKmVjSXTDk"],
-      long: ["yhulQ0XuAPM"],
+      quick: ["xwKmVjSXTDk", "xgtLKeCkCiw", "Qifg5hxnlJE"],
+      long: ["yhulQ0XuAPM", "pxl8hhyN6AQ"],
     },
   },
   breadIsPoison: {
@@ -35,8 +27,8 @@ export const allData = {
     path: "/bread-is-poison",
     iconPath: `${iconPathBase}/bread-is-poison.png`,
     videos: {
-      quick: [],
-      long: [],
+      quick: ["bkrCbM1UvuU"],
+      long: ["1oQFix-SRJ4", "jI2-VWpiFc4", "WwasJCB4FaA"],
     },
   },
   sugarIsPoison: {
@@ -45,8 +37,8 @@ export const allData = {
     path: "/sugar-is-poison",
     iconPath: `${iconPathBase}/sugar-is-poison.png`,
     videos: {
-      quick: [],
-      long: [],
+      quick: ["mRj1RKh4xyY", "4SlWarb216w", "H7AqABw5-_A", "ef-uEe_fcdU"],
+      long: ["TOTZDjAyar0"],
     },
   },
   oilsThatArePoison: {
@@ -55,8 +47,8 @@ export const allData = {
     path: "/oils-that-are-poison",
     iconPath: `${iconPathBase}/oils-that-are-poison.png`,
     videos: {
-      quick: [],
-      long: [],
+      quick: ["6j60t0juXeQ", "wPlHuXYI8v0"],
+      long: ["5wJ8SOV3HBE"],
     },
   },
   acne: {
@@ -69,11 +61,11 @@ export const allData = {
       long: [],
     },
   },
-  goodYoutubeChannels: {
+  guruPeople: {
     index: 6,
-    name: "Good Youtube Channels",
-    path: "/good-youtube-channels",
-    iconPath: `${iconPathBase}/good-youtube-channels.png`,
+    name: "Guru People",
+    path: "/guru-people",
+    iconPath: `${iconPathBase}/guru-people.png`,
     sectionsOfInfluencers: [
       {
         name: "Ketogenic Diet",
@@ -107,6 +99,13 @@ export const allData = {
             description: "",
           },
           {
+            name: "Dr. Sten Ekberg",
+            url: "https://www.youtube.com/user/drekberg",
+            imageUrl:
+              "https://yt3.ggpht.com/KUPk4LQnqOck9c-nKzyhauPkEbkpVNS8KoiX50ySWlyAQPYipKqZLGLgzxGZZ3xk9RkD5eb4pg=s176-c-k-c0x00ffffff-no-rj",
+            description: "",
+          },
+          {
             name: "Keto Kamp",
             url: "https://www.youtube.com/c/KetoKamp",
             imageUrl:
@@ -125,23 +124,44 @@ export const allData = {
               "https://i.ytimg.com/vi/Ys86ZgjQQYg/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLByEUunPX_JFGJcKrWx4zFL32ldvQ",
             description: "",
           },
+          {
+            name: "Wim Hof",
+            url: "https://www.youtube.com/user/wimhof1",
+            imageUrl:
+              "https://yt3.ggpht.com/ytc/AKedOLQnPvw7wAI1f_RFYH9d1AUw0e60mmhGPrrAIHD_=s176-c-k-c0x00ffffff-no-rj",
+            description: "",
+          },
+          {
+            name: "Joe Rogan",
+            url: "https://www.youtube.com/c/joerogan",
+            imageUrl:
+              "https://yt3.ggpht.com/ytc/AKedOLS2KcFQ2ddXLYVpxbXNVqf7nsi0NWg4_R4HqKIl=s176-c-k-c0x00ffffff-no-rj",
+            description: "",
+          },
+          {
+            name: "Sadhguru",
+            url: "https://www.youtube.com/c/sadhguru",
+            imageUrl:
+              "https://yt3.ggpht.com/ytc/AKedOLRuuRLqxnh4b91JgJz_5BpBPC9oAf7eGzy3N_pcqDU=s176-c-k-c0x00ffffff-no-rj",
+            description: "",
+          },
+          {
+            name: "Mark Sisson",
+            url: "https://www.youtube.com/user/theprimalblueprint",
+            imageUrl:
+              "https://mealpreponfleek.com/wp-content/uploads/2017/10/MarkSisson_headshot.CROPPED.jpg",
+            description: "",
+          },
         ],
       },
     ],
-  },
-  guruPeople: {
-    index: 7,
-    name: "Guru People",
-    path: "/guru-people",
-    iconPath: `${iconPathBase}/guru-people.png`,
-    sectionsOfInfluencers: [],
   },
 };
 
 export type VideosType = typeof allData.intermittentFasting.videos;
 
 export type SectionsOfInfluencers =
-  typeof allData.goodYoutubeChannels.sectionsOfInfluencers;
+  typeof allData.guruPeople.sectionsOfInfluencers;
 
 export type InfluencersType =
-  typeof allData.goodYoutubeChannels.sectionsOfInfluencers[0]["list"];
+  typeof allData.guruPeople.sectionsOfInfluencers[0]["list"];

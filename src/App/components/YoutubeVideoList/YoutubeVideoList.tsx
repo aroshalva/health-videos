@@ -15,25 +15,28 @@ const useStyles = makeStyles((theme: Theme) => ({
     justifyContent: "start",
     marginBottom: "50px",
     [theme.breakpoints.only("xs")]: {
-      marginBottom: "20px",
       flexDirection: "column",
+      marginBottom: "80px",
     },
   },
 }));
 
 export const YoutubeVideoList: React.FC<{
-  videos: {
-    quick: string[];
-    long: string[];
+  dataItem: {
+    name: string;
+    videos: {
+      quick: string[];
+      long: string[];
+    };
   };
-}> = ({ videos }) => {
+}> = ({ dataItem: { name, videos } }) => {
   const classes = useStyles();
 
   return (
     <div className={classes.root}>
       {!!videos.quick.length && (
         <>
-          <SectionTitle>Quick Videos</SectionTitle>
+          <SectionTitle contentTitle={name}>Starter Videos</SectionTitle>
 
           <div className={classes.section}>
             {videos.quick.map((videoId, index) => (
@@ -45,7 +48,7 @@ export const YoutubeVideoList: React.FC<{
 
       {!!videos.long.length && (
         <>
-          <SectionTitle>Long Videos</SectionTitle>
+          <SectionTitle>Deep Dive</SectionTitle>
 
           <div className={classes.section}>
             {videos.long.map((videoId, index) => (

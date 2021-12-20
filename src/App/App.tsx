@@ -14,11 +14,10 @@ import { BreadIsPoison } from "./routes/BreadIsPoison/BreadIsPoison";
 import { SugarIsPoison } from "./routes/SugarIsPoison/SugarIsPoison";
 import { OilsThatArePoison } from "./routes/OilsThatArePoison/OilsThatArePoison";
 import { Acne } from "./routes/Acne/Acne";
-import { GoodYoutubeChannels } from "./routes/GoodYoutubeChannels/GoodYoutubeChannels";
 import { GuruPeople } from "./routes/GuruPeople/GuruPeople";
 
 const muiTheme = responsiveFontSizes(createTheme({}), {
-  factor: 1.5,
+  factor: 2.5,
 });
 
 export const App: React.FC = () => {
@@ -63,16 +62,12 @@ export const App: React.FC = () => {
                   <Acne />
                 </Route>
 
-                <Route path={allData.goodYoutubeChannels.path}>
-                  <GoodYoutubeChannels
+                <Route path={allData.guruPeople.path}>
+                  <GuruPeople
                     sectionsOfInfluencers={
-                      allData.goodYoutubeChannels.sectionsOfInfluencers
+                      allData.guruPeople.sectionsOfInfluencers
                     }
                   />
-                </Route>
-
-                <Route path={allData.guruPeople.path}>
-                  <GuruPeople />
                 </Route>
 
                 <Route path="/admin-control-panel">admin control panel</Route>

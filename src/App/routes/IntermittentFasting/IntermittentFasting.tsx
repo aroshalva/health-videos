@@ -11,7 +11,7 @@ export const IntermittentFasting: React.FC = () => {
 
   return (
     <div className={classes.root}>
-      <YoutubeVideoList videos={allData.intermittentFasting.videos} />
+      <YoutubeVideoList dataItem={allData.intermittentFasting} />
     </div>
   );
 };

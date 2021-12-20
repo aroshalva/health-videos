@@ -11,7 +11,7 @@ export const SugarIsPoison: React.FC = () => {
 
   return (
     <div className={classes.root}>
-      <YoutubeVideoList videos={allData.sugarIsPoison.videos} />
+      <YoutubeVideoList dataItem={allData.sugarIsPoison} />
     </div>
   );
 };
