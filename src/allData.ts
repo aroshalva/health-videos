@@ -112,7 +112,7 @@ export const allData = {
             name: "Dr. Sten Ekberg",
             url: "https://www.youtube.com/user/drekberg",
             imageUrl:
-              "https://yt3.ggpht.com/KUPk4LQnqOck9c-nKzyhauPkEbkpVNS8KoiX50ySWlyAQPYipKqZLGLgzxGZZ3xk9RkD5eb4pg=s176-c-k-c0x00ffffff-no-rj",
+              "https://yt3.ggpht.com/2SsapPKLiBcmFfJq_KubX6gGu77OxJxbjorJiZTWeBpLL0RF-RUqbB7KV780y2PCWzaith0-YF4=s176-c-k-c0x00ffffff-no-rj",
             description: "",
           },
           {
