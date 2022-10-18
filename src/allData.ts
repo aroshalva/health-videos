@@ -1,18 +1,18 @@
 const iconPathBase = "/tabIcons";
 
 export const allData = {
-  intermittentFasting: {
-    index: 0,
-    name: "Intermittent Fasting",
-    path: "/intermittent-fasting",
-    iconPath: `${iconPathBase}/intermittent-fasting.png`,
+  quickStart: {
+    id: "quickStart",
+    name: "Quick Start",
+    path: "/quick-start",
+    iconPath: `${iconPathBase}/quick-start.png`,
     videos: {
       quick: ["VIhhrYjVhOk", "dW_99QcCTzE", "xrZMYVDcjZI"],
       long: ["m09B2hDx-Sg", "LLVf3d0rqqY", "DnRQJzK6yvI", "cUwd-D94pzE"],
     },
   },
   ketogenicDiet: {
-    index: 1,
+    id: "ketogenicDiet",
     name: "Ketogenic Diet",
     path: "/ketogenic-diet",
     iconPath: `${iconPathBase}/ketogenic-diet.png`,
@@ -21,8 +21,18 @@ export const allData = {
       long: ["yhulQ0XuAPM", "pxl8hhyN6AQ"],
     },
   },
+  intermittentFasting: {
+    id: "intermittentFasting",
+    name: "Intermittent Fasting",
+    path: "/intermittent-fasting",
+    iconPath: `${iconPathBase}/intermittent-fasting.png`,
+    videos: {
+      quick: ["VIhhrYjVhOk", "dW_99QcCTzE", "xrZMYVDcjZI"],
+      long: ["m09B2hDx-Sg", "LLVf3d0rqqY", "DnRQJzK6yvI", "cUwd-D94pzE"],
+    },
+  },
   breadIsPoison: {
-    index: 2,
+    id: "breadIsPoison",
     name: "Bread is Poison",
     path: "/bread-is-poison",
     iconPath: `${iconPathBase}/bread-is-poison.png`,
@@ -32,7 +42,7 @@ export const allData = {
     },
   },
   sugarIsPoison: {
-    index: 3,
+    id: "sugarIsPoison",
     name: "Sugar is Poison",
     path: "/sugar-is-poison",
     iconPath: `${iconPathBase}/sugar-is-poison.png`,
@@ -42,7 +52,7 @@ export const allData = {
     },
   },
   oilsThatArePoison: {
-    index: 4,
+    id: "oilsThatArePoison",
     name: "Oils that are Poison",
     path: "/oils-that-are-poison",
     iconPath: `${iconPathBase}/oils-that-are-poison.png`,
@@ -52,7 +62,7 @@ export const allData = {
     },
   },
   acne: {
-    index: 5,
+    id: "acne",
     name: "Acne",
     path: "/acne",
     iconPath: `${iconPathBase}/acne.png`,
@@ -72,7 +82,7 @@ export const allData = {
     },
   },
   guruPeople: {
-    index: 6,
+    id: "guruPeople",
     name: "Guru People",
     path: "/guru-people",
     iconPath: `${iconPathBase}/guru-people.png`,

@@ -69,9 +69,9 @@ export const MainLayout: React.FC = ({ children }) => {
   const classes = useStyles();
   const history = useHistory();
   const [value, setValue] = useState(
-    Object.values(allData).find(
+    Object.values(allData).findIndex(
       ({ path }) => path === history.location.pathname
-    )?.index || 0
+    ) || 0
   );
 
   const handleChange = (
@@ -79,10 +79,10 @@ export const MainLayout: React.FC = ({ children }) => {
     newValue: number
   ) => {
     history.push(
-      Object.values(allData).find(({ index }) => index === newValue)?.path ||
+      Object.values(allData).find((unuse, index) => index === newValue)?.path ||
         "/"
     );
-    setValue(Number(newValue));
+    setValue(newValue);
   };
 
   return (
@@ -95,11 +95,9 @@ export const MainLayout: React.FC = ({ children }) => {
         onChange={handleChange}
         value={value}
       >
-        {Object.values(allData)
-          .sort((routeA, routeB) => routeA.index - routeB.index)
-          .map((routePath) => (
-            <TabItem key={routePath.path} routerPath={routePath} />
-          ))}
+        {Object.values(allData).map((routePath) => (
+          <TabItem key={routePath.path} routerPath={routePath} />
+        ))}
       </Tabs>
 
       <Box
