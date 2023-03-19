@@ -6,8 +6,8 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
-export const QuickStart: React.FC = () => {
+export const FoodMap: React.FC = () => {
   const classes = useStyles();
 
-  return <div className={classes.root}>yoyo</div>;
+  return <div className={classes.root}>Food Map</div>;
 };

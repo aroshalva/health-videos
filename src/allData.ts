@@ -1,15 +1,11 @@
 const iconPathBase = "/tabIcons";
 
 export const allData = {
-  quickStart: {
-    id: "quickStart",
-    name: "Quick Start",
-    path: "/quick-start",
-    iconPath: `${iconPathBase}/quick-start.png`,
-    videos: {
-      quick: ["VIhhrYjVhOk", "dW_99QcCTzE", "xrZMYVDcjZI"],
-      long: ["m09B2hDx-Sg", "LLVf3d0rqqY", "DnRQJzK6yvI", "cUwd-D94pzE"],
-    },
+  foodMap: {
+    id: "foorMap",
+    name: "Food Map",
+    path: "/foot-map",
+    iconPath: `${iconPathBase}/foor-map.png`,
   },
   ketogenicDiet: {
     id: "ketogenicDiet",

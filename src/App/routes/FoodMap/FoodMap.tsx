@@ -1,16 +1,16 @@
 import { makeStyles } from "@material-ui/core";
-import { QuickStart as QuickStartComponent } from "App/components/QuickStart/QuickStart";
+import { FoodMap as FoodMapComponent } from "App/components/FoodMap/QuickStart";
 
 const useStyles = makeStyles(() => ({
   root: {},
 }));
 
-export const QuickStart: React.FC = () => {
+export const FoodMap: React.FC = () => {
   const classes = useStyles();
 
   return (
     <div className={classes.root}>
-      <QuickStartComponent />
+      <FoodMapComponent />
     </div>
   );
 };

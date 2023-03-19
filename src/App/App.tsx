@@ -8,7 +8,7 @@ import {
 } from "@material-ui/core";
 import { MainLayout } from "./MainLayout/MainLayout";
 import { allData } from "../allData";
-import { QuickStart } from "./routes/QuickStart/QuickStart";
+import { FoodMap } from "./routes/FoodMap/FoodMap";
 import { IntermittentFasting } from "./routes/IntermittentFasting/IntermittentFasting";
 import { KetogenicDiet } from "./routes/KetogenicDiet/KetogenicDiet";
 import { BreadIsPoison } from "./routes/BreadIsPoison/BreadIsPoison";
@@ -34,11 +34,11 @@ export const App: React.FC = () => {
                 <Route
                   path="/"
                   exact
-                  render={() => <Redirect to={allData.quickStart.path} />}
+                  render={() => <Redirect to={allData.foodMap.path} />}
                 />
 
-                <Route path={allData.quickStart.path}>
-                  <QuickStart />
+                <Route path={allData.foodMap.path}>
+                  <FoodMap />
                 </Route>
 
                 <Route path={allData.intermittentFasting.path}>
