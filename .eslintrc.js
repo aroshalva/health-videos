@@ -19,11 +19,11 @@ module.exports = {
   },
   extends: [
     "eslint:recommended",
-    "prettier",
     "plugin:react/recommended", // Uses the recommended rules from @eslint-plugin-react
     "plugin:react-hooks/recommended",
-    "plugin:prettier/recommended", // Enables eslint-plugin-prettier and eslint-config-prettier. This will display prettier errors as ESLint errors. Make sure this is always the last configuration in the extends array.
     "plugin:@typescript-eslint/recommended",
+    "prettier",
+    "plugin:prettier/recommended", // Enables eslint-plugin-prettier and eslint-config-prettier. This will display prettier errors as ESLint errors. Make sure this is always the last configuration in the extends array.
   ],
   rules: {
     "no-unused-vars": 0,
@@ -50,7 +50,6 @@ module.exports = {
   },
   plugins: [
     "@typescript-eslint",
-    "custom-rules",
     "mui-unused-classes",
     "eslint-plugin-no-inline-styles",
   ],
@@ -58,4 +57,4 @@ module.exports = {
     React: true,
     JSX: true,
   },
-}
+};

@@ -5,7 +5,7 @@ export const allData = {
     id: "foorMap",
     name: "Food Map",
     path: "/foot-map",
-    iconPath: `${iconPathBase}/foor-map.png`,
+    iconPath: `${iconPathBase}/food-map.png`,
   },
   ketogenicDiet: {
     id: "ketogenicDiet",

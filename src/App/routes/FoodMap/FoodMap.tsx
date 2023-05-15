@@ -1,5 +1,5 @@
 import { makeStyles } from "@material-ui/core";
-import { FoodMap as FoodMapComponent } from "App/components/FoodMap/QuickStart";
+import { FoodMap as FoodMapComponent } from "App/components/FoodMap/FoodMap";
 
 const useStyles = makeStyles(() => ({
   root: {},
